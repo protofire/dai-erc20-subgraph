@@ -1,0 +1,45 @@
+type Mint @entity {
+  id: ID!
+  guy: Bytes! # address
+  wad: BigInt! # uint256
+}
+
+type Burn @entity {
+  id: ID!
+  guy: Bytes! # address
+  wad: BigInt! # uint256
+}
+
+type LogSetAuthority @entity {
+  id: ID!
+  authority: Bytes! # address
+}
+
+type LogSetOwner @entity {
+  id: ID!
+  owner: Bytes! # address
+}
+
+type LogNote @entity {
+  id: ID!
+  sig: Bytes! # bytes4
+  guy: Bytes! # address
+  foo: Bytes! # bytes32
+  bar: Bytes! # bytes32
+  wad: BigInt! # uint256
+  fax: Bytes! # bytes
+}
+
+type Approval @entity {
+  id: ID!
+  src: Bytes! # address
+  guy: Bytes! # address
+  wad: BigInt! # uint256
+}
+
+type Transfer @entity {
+  id: ID!
+  src: Bytes! # address
+  dst: Bytes! # address
+  wad: BigInt! # uint256
+}
