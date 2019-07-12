@@ -6,36 +6,19 @@ dataSources:
     name: Contract
     network: mainnet
     source:
-      address: "0xf6fEbEade22e90E3c8d395282e37b78C0875d539"
+      address: "0x89d24a6b4ccb1b6faa2625fe562bdd9a23260359"
       abi: Contract
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.2
+      apiVersion: 0.0.3
       language: wasm/assemblyscript
       entities:
-        - Mint
-        - Burn
-        - LogSetAuthority
-        - LogSetOwner
-        - LogNote
-        - Approval
         - Transfer
+        - Account
       abis:
         - name: Contract
           file: ./abis/Contract.json
       eventHandlers:
-        - event: Mint(indexed address,uint256)
-          handler: handleMint
-        - event: Burn(indexed address,uint256)
-          handler: handleBurn
-        - event: LogSetAuthority(indexed address)
-          handler: handleLogSetAuthority
-        - event: LogSetOwner(indexed address)
-          handler: handleLogSetOwner
-        - event: LogNote(indexed bytes4,indexed address,indexed bytes32,indexed bytes32,uint256,bytes)
-          handler: handleLogNote
-        - event: Approval(indexed address,indexed address,uint256)
-          handler: handleApproval
         - event: Transfer(indexed address,indexed address,uint256)
           handler: handleTransfer
       file: ./src/mapping.ts
